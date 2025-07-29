@@ -2,12 +2,15 @@
 
 return [
 
+    'middleware' => [
+        // Allow CORS
+        \Illuminate\Http\Middleware\HandleCors::class,
+    ],
+
     'cors' => [
         'paths' => ['api/*', 'sanctum/csrf-cookie'],
         'allowed_methods' => ['*'],
-        'allowed_origins' => ['http://localhost:5173',
-        ' https://laravel-api-zg6b-4xyp.vercel.app/'
-         ],
+        'allowed_origins' => ['*'],
         'allowed_headers' => ['*'],
         'exposed_headers' => [],
         'max_age' => 0,
